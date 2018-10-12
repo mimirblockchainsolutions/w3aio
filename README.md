@@ -49,9 +49,9 @@ Async code is hard, but powerful. Writing server side systems that play well wit
 
 Writing a multiplexor is fun! In Python, it also is easy to make a huge memory hog. So rather than build a complex multiplexor, use only call response commands and never PubSub. Then you can call your transport object like this:
 ```python
-async def call(msg):
-  await ws.write(msg)
-  response = await ws.read()
+async def call(self,msg):
+  await self.ws.write(msg)
+  response = await self.ws.read()
   return response
 ```
 and no multiplexor is needed.
