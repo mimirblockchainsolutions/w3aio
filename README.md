@@ -31,7 +31,11 @@ started to litter our code. Refactors cleaned this up, but there was always some
 When PubSub was added to the JSONRPC spec of Ethereum, we were like giddy children. Such a great new toy! Imagine the possibilities! What we found was that, when you mix websockets, load balancers, stateful server side filters, and production code... you get a nightmare. So all filtering is done using client side polling of the server. We also found some clients left the `proc` filesystem a little messy... almost memory leaky. This is also scary. So we said,
 
 ```
-No more server side filters! From thence day forth, all block filtering shall be done on the client side, using a long poll and callbacks!
+No more server side filters!
+
+From thence day forth, all block filtering shall be done
+
+on the client side, using a long poll and callbacks!
 ```
 ... and life has been better since.
 
