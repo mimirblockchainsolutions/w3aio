@@ -41,9 +41,20 @@ on the client side, using a long poll and callbacks!
 
 You know, graceful reconnection, backpressure, and what not.
 
-#### More
+#### Async
 
-More lessons here!
+Async code is hard, but powerful. Writing server side systems that play well with the blockchain means async or parrellel. Parrellel is better left to things like rust, but Python does asyncio well (at least since 3.5). In order to make synchronous code async, you have to get all mutex-y. Although it can be done, when dealing with [dining philosophers](https://en.wikipedia.org/wiki/Dining_philosophers_problem) it is easy to have one starve or at least have one start an argument. So we decided to go async all the way.
+
+#### Multiplexing
+
+Writing a multiplexor is fun! In Python, it also is easy to make a huge memory hog. So rather than build a complex multiplexor, use only call response commands and never PubSub. Then you can call your transport object like this:
+```python
+async def call(msg):
+  await ws.write(msg)
+  response = await ws.read()
+  return response
+```
+and no multiplexor is needed.
 
 ## Usage
 
