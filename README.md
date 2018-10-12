@@ -32,9 +32,7 @@ When PubSub was added to the JSONRPC spec of Ethereum, we were like giddy childr
 
 ```
 No more server side filters!
-
 From thence day forth, all block filtering shall be done
-
 on the client side, using a long poll and callbacks!
 ```
 ... and life has been better since.
