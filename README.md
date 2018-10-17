@@ -43,7 +43,7 @@ You know, graceful reconnection, backpressure, and what not.
 
 #### Async
 
-Async code is hard, but powerful. Writing server side systems that play well with the blockchain means async or parrellel. Parrellel is better left to things like rust, but Python does async well (at least since 3.5). In order to make synchronous code async, you have to get all mutex-y. Although it can be done, when dealing with [dining philosophers](https://en.wikipedia.org/wiki/Dining_philosophers_problem) it is easy to have one starve or at least have one start an argument. So we decided to go async all the way.
+Async code is hard, but powerful. Writing server side systems that play well with the blockchain means async or parrellel. Parrellel is better left to things like rust, but Python does async well (at least since 3.5). In order to make synchronous code async via threading, you have to get all mutex-y. Although it can be done, when dealing with [dining philosophers](https://en.wikipedia.org/wiki/Dining_philosophers_problem) it is easy to have one starve or at least have one start an argument. So we decided to go async all the way.
 
 #### Multiplexing
 
